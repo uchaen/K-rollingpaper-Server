@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Letter">
+    <select id="findAllLetter" parameterType="Long" resultType="letter">
+        select * from letter where paperId=#{paperId}
+    </select>
+    <select id="findById" parameterType="Long" resultType="letter">
+        select * from letter where letterId=#{letterId}
+    </select>
+    <insert id="createLetter" parameterType="letter">
+        insert into letter(letterContents, letterAuthor, letterPw, paperId, letterColor)
+        values(#{letterContents},#{letterAuthor},#{letterPw},#{paperId},#{letterColor})
+    </insert>
+    <update id="updateLetter" parameterType="letter">
+        UPDATE letter SET letterContents = #{letterContents}, letterAuthor=#{letterAuthor}, letterColor=#{letterColor}
+        WHERE letterId = #{letterId}
+    </update>
+    <delete id="deleteLetter" parameterType="Long">
+        delete from letter where letterId=#{letterId}
+    </delete>
+</mapper>

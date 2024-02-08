@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Paper">
+    <select id="findAll" resultType="paper">
+        select paperId,paperTitle from paper
+    </select>
+    <select id="findById" parameterType="Long" resultType="paper">
+        select * from paper where paperId=#{paperId}
+    </select>
+    <insert id="createPaper" parameterType="paper">
+        insert into paper(paperTitle, paperPw) values(#{paperTitle},#{paperPw})
+    </insert>
+    <update id="updatePaper" parameterType="paper">
+        UPDATE paper SET paperTitle = #{paperTitle} WHERE paperId = #{paperId}
+    </update>
+    <delete id="deletePaper" parameterType="Long">
+        delete from paper where paperId=#{paperId}
+    </delete>
+</mapper>
