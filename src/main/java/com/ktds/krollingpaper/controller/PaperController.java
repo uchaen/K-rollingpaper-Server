@@ -32,7 +32,7 @@ public class PaperController {
         return paperService.deletePaper(inputtedPaper);
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     public boolean updatePaper(@RequestBody PaperDTO inputtedPaper) {
         return paperService.updatePaper(inputtedPaper);
     }

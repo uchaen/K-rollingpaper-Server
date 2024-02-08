@@ -33,7 +33,7 @@ public class LetterController {
         return letterService.deleteLetter(inputtedLetter);
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     public boolean updateLetter(@RequestBody LetterDTO inputtedLetter) {
         return letterService.updateLetter(inputtedLetter);
     }
