@@ -4,7 +4,7 @@
 
 <mapper namespace="Letter">
     <select id="findAllLetter" parameterType="Long" resultType="letter">
-        select * from letter where paperId=#{paperId}
+        select letterId,letterContents,letterAuthor,letterColor from letter where paperId=#{paperId}
     </select>
     <select id="findById" parameterType="Long" resultType="letter">
         select * from letter where letterId=#{letterId}
