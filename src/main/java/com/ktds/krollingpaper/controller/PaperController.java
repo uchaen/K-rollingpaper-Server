@@ -27,7 +27,7 @@ public class PaperController {
         paperService.createPaper(paperDTO);
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping("/delete")
     public boolean deletePaper(@RequestBody PaperDTO inputtedPaper) {
         return paperService.deletePaper(inputtedPaper);
     }

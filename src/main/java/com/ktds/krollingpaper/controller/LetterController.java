@@ -28,7 +28,7 @@ public class LetterController {
         letterService.createLetter(letterDTO);
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping("/delete")
     public boolean deleteLetter(@RequestBody LetterDTO inputtedLetter) {
         return letterService.deleteLetter(inputtedLetter);
     }
